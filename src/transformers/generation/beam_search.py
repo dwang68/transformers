@@ -170,6 +170,13 @@ class BeamSearchScorer(BeamScorer):
         num_beam_groups: Optional[int] = 1,
         max_length: Optional[int] = None,
     ):
+        # 🔬 DEBUG: Verify custom beam search is active
+        print("=" * 80)
+        print("🔬 CUSTOM BEAM SEARCH INITIALIZED!")
+        print(f"   Parameters: num_beams={num_beams}, batch_size={batch_size}")
+        print(f"   length_penalty={length_penalty}, do_early_stopping={do_early_stopping}")
+        print("=" * 80)
+
         self.num_beams = num_beams
         self.device = device
         self.length_penalty = length_penalty
